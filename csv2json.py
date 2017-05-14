@@ -1,7 +1,7 @@
 """ 
 	Title:			CSV to JSON converter.
 	Author: 		Matthew Cohen
-	Stdnt number: 	763090
+	Stdnt number:		763090
 	Class:			INFO20001, Foundations of Informatics
 	Date: 			14/05/17
 """
