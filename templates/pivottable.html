@@ -4,6 +4,15 @@
     <head></head>
     <body>
         <h1>The Data</h1>
-        {{ object_list }}
+        <table border=1 cellpadding=7>
+            <tr>
+                <th>Name</th>
+            </tr>
+            {% for obj in object_list %}
+            <tr>
+                <td>{{ obj.STATE }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </body>
 </html>
