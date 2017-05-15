@@ -1,28 +1,31 @@
-<!DOCTYPE html>
-<html>
-   <head>
-    <title>Pivot Table</title>
-  </head>
 
-  <body>
-    <p>
-      "Pivot Table"
-    </p>
-    <p id="demo"></p>
-  </body>
-  <script>
+<!doctype html>
+<html lang="en">
+    <head></head>
+    <body>
+        <h1>The Data</h1>
+        <table border=1 cellpadding=7>
+            <tr>
+                <th>ID</th>
+                <th>Year</th>
+                <th>Cause</th>
+                <th>State</th>
+                <th>Deaths</th>
+                <th>AADR</th>
+            </tr>
+            {% for obj in object_list %}
+            <tr>
+                <td>{{ obj.ID }}</td>
+                <td>{{ obj.YEAR }}</td>
+                <td>{{ obj.CAUSE_NAME }}</td>
+                <td>{{ obj.STATE }}</td>
+                <td>{{ obj.DEATHS }}</td>
+                <td>{{ obj.AADR }}</td>
 
-  var xmlhttp = new XMLHttpRequest();
-  var url = "jsondata.json";
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        myObj = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = myObj.AADR;
-    }
-  };
-  xmlhttp.open("GET", url, true);
-  xmlhttp.send();
 
 
-  </script>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
 </html>
