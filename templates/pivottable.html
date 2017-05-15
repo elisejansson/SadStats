@@ -6,11 +6,22 @@
         <h1>The Data</h1>
         <table border=1 cellpadding=7>
             <tr>
-                <th>Name</th>
+                <th>Year</th>
+                <th>Cause</th>
+                <th>State</th>
+                <th>Deaths</th>
+                <th>AADR</th>
             </tr>
             {% for obj in object_list %}
             <tr>
+                <td>{{ obj.YEAR }}</td>
+                <td>{{ obj.CAUSE_NAME }}</td>
                 <td>{{ obj.STATE }}</td>
+                <td>{{ obj.DEATHS }}</td>
+                <td>{{ obj.AADR }}</td>
+
+
+
             </tr>
             {% endfor %}
         </table>
