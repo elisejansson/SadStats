@@ -16,6 +16,16 @@ def pivottable():
     object_list = get_csv()
     return render_template(template, object_list=object_list)
 
+@app.route("/about")
+def about():
+    template = 'about.html'
+    return render_template(template)
+
+@app.route("/findings")
+def findings():
+    template = 'findings.html'
+    return render_template(template)
+
 if __name__ == '__main__':
     # Fire up the Flask test server
     app.run(debug=True, use_reloader=True)
