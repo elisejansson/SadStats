@@ -19,19 +19,16 @@ def pivottable():
     object_list = get_csv()
     return render_template(template, object_list=object_list)
 
-@app.route("/")
-def about():
-    template = 'home.html'
+@app.route("/navbar")
+def navbar():
+    template = 'navbar.html'
     return render_template(template)
 
-@app.route('/<row_id>/')
-def detail(row_id):
-    template = 'IDtest.html'
-    object_list = get_csv()
-    for row in object_list:
-        if row['ID'] == row_id:
-            return render_template(template, object=row)
-    abort(404)
+@app.route("/")
+def index():
+    template = 'index.html'
+    return render_template(template)
+
 
 if __name__ == '__main__':
     # Fire up the Flask test server
