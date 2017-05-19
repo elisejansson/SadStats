@@ -19,6 +19,11 @@ def pivottable():
     object_list = get_csv()
     return render_template(template, object_list=object_list)
 
+@app.route("/")
+def about():
+    template = 'home.html'
+    return render_template(template)
+
 @app.route('/<row_id>/')
 def detail(row_id):
     template = 'IDtest.html'
