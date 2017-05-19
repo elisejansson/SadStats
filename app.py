@@ -1,5 +1,8 @@
 import csv
+import pandas as pd
+import numpy as np
 from flask import Flask
+from flask import abort #error messageing
 from flask import render_template #to combine data with html
 #import pivot.py
 
@@ -28,15 +31,19 @@ def pivottable():
     template = 'pivottable.html'
     return render_template(template)
 
-@app.route("/about")
+@app.route("/")
 def about():
-    template = 'about.html'
+    template = 'home.html'
     return render_template(template)
 
-@app.route("/findings")
-def findings():
-    template = 'findings.html'
-    return render_template(template)
+@app.route('/<row_id>/')
+def detail(row_id):
+    template = 'IDtest.html'
+    object_list = get_csv()
+    for row in object_list:
+        if row['ID'] == row_id:
+            return render_template(template, object=row)
+    abort(404)
 
 if __name__ == '__main__':
     # Fire up the Flask test server
