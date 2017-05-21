@@ -13,7 +13,18 @@ def get_csv():
     csv_file = open(csv_path, 'rb')
     csv_obj = csv.DictReader(csv_file)
     csv_list = list(csv_obj) #to create permanent list
-    return csv_list
+    return csv_list   
+
+@app.route("/api/pivottable")
+def pivottable_api():
+    #csv_list should have been passed as a global variable
+    index = request.args.get('index')
+    values = request.args.get('values')
+    filtering = request.args.get('filtering')
+    pivot_data = pivot(index, values, filtering, csv_list)
+    #json_pivottable = pivot_data to json
+    #set mime type to application/json
+    return json_pivottable
 
 @app.route("/api/pivottable")
 def pivottable_api():
@@ -31,10 +42,12 @@ def pivottable():
     template = 'pivottable.html'
     return render_template(template)
 
+
 @app.route("/navbar")
 def navbar():
     template = 'navbar.html'
     return render_template(template)
+
 
 @app.route("/")
 def index():
