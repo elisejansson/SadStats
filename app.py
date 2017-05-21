@@ -4,7 +4,7 @@ import pandas as pd
 from flask import Flask
 from flask import abort #error messageing
 from flask import render_template #to combine data with html
-#import pivot.py
+import pivot.py
 
 app = Flask(__name__)
 
@@ -18,9 +18,9 @@ def get_csv():
 @app.route("/api/pivottable")
 def pivottable_api():
     #csv_list should have been passed as a global variable
-    index = request.args.get('index')
-    values = request.args.get('values')
-    filtering = request.args.get('filtering')
+    index = request.args.get('index') #should be list
+    values = request.args.get('values') #should be list
+    filtering = request.args.get('filtering') #should be dictionary
     pivot_data = pivot(index, values, filtering, csv_list) #returns as json
     #set mime type to application/json
     return json_pivottable
