@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 from flask import Flask
 from flask import request
+import pivot
 from flask import abort #error messageing
 from flask import render_template #to combine data with html
 
