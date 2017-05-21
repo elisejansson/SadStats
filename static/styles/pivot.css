@@ -3,15 +3,22 @@
 }
 
 .form-group {
-  max-width: 400px;
+  max-width: 100%;
   padding: 15px 35px 45px;
-  margin: 0 auto;
   background: rgba(255,255,255,0.9);
   border: 1px solid rgba(0,0,0,0.1);
-border-radius: 25px;
+  border-radius: 25px;
 	}
 
-  .form-control {
+.index {
+  max-width: 400px;
+}
+
+.test {
+  max-width: 400px;
+}
+
+.form-control {
     position: relative;
     font-size: 16px;
     height: auto;
@@ -22,3 +29,11 @@ border-radius: 25px;
       z-index: 2;
     }
   }
+
+.pivottable {
+  max-width: 100%;
+  padding: 15px 35px 45px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 25px;
+}
