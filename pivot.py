@@ -65,10 +65,19 @@ def pivot(pt_index, pt_columns, pt_values, pt_filtering):
 
     pivot_table = pd.pivot_table(df, index=pt_index, columns=pt_columns,
     values=pt_values)
-    print pivot_table
+    #print pivot_table
+
+    html_pivottable = pd.DataFrame.to_html(pivot_table, buf=None, columns=None,
+    col_space=None, header=True, index=True, na_rep='NaN', formatters=None,
+    float_format=None, sparsify=None, index_names=True, justify=None,
+    bold_rows=True, classes=None, escape=True, max_rows=None, max_cols=None,
+    show_dimensions=False, notebook=False, decimal='.', border=None)
+
+    #print html_pivottable
+
 
     #json_pt = pivot_table.to_json(double_precision=2,orient='columns')
     #print json_pt
     #return json_pt
 
-pivot(["CAUSE_NAME", "STATE"], ["YEAR"], ["AADR"], {'YEAR':None,'STATE':None,'CAUSE_NAME':None})
+pivot(["CAUSE_NAME"], ["YEAR"], ["DEATHS"], {'YEAR':'2003','STATE':None,'CAUSE_NAME':None})

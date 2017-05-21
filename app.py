@@ -4,7 +4,8 @@ import pandas as pd
 from flask import Flask
 from flask import abort #error messageing
 from flask import render_template #to combine data with html
-import pivot.py
+from flask import request
+import pivot
 
 app = Flask(__name__)
 
@@ -15,27 +16,20 @@ def get_csv():
     csv_list = list(csv_obj) #to create permanent list
     return csv_list
 
-@app.route("/api/pivottable")
+@app.route("/api/pivottable", methods=['GET'])
 def pivottable_api():
-    #csv_list should have been passed as a global variable
+
+    # #csv_list should have been passed as a global variable
     index = request.args.get('index') #should be list
     values = request.args.get('values') #should be list
     columns = request.args.get('columns') #should be list
-    filtering = request.args.get('filtering') #should be dictionary
-    pivot_data = pivot(index, values, columns, filtering, csv_list) #returns as json
-    #set mime type to application/json
-    return json_pivottable
+    #filtering = request.args.get('filtering') #should be dictionary
+    #filtering = {'YEAR':None,'STATE':None,'CAUSE_NAME':None}
+    return index + values + columns
+    #pivot_data = pivot(index, values, columns, filtering) #returns as json
+    # #set mime type to application/json
 
-@app.route("/api/pivottable")
-def pivottable_api():
-    #csv_list should have been passed as a global variable
-    index = request.args.get('index')
-    values = request.args.get('values')
-    filtering = request.args.get('filtering')
-    pivot_data = pivot(index, values, filtering, csv_list)
-    #json_pivottable = pivot_data to json
-    #set mime type to application/json
-    return json_pivottable
+    #return pivot_data
 
 @app.route("/pivottable")
 def pivottable():
