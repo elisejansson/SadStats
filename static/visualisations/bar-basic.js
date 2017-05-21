@@ -1,9 +1,3 @@
-/*
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<div id="container" style="min-width: 310px; max-width: 800px; height: 1000px;
-    margin: 0 auto"></div>
-*/
 
 // http://jsfiddle.net/qdjhffcw/
 

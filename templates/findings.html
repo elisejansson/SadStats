@@ -3,30 +3,19 @@
     <head>
     <title>Our Findings</title>
 
-
-{% include 'navbar.html' %}
-
     <style>
     h1.sansserif {
         font-family: Arial, Helvetica, sans-serif;
     }
     </style>
-    </head>
 
+  </head>
+{% include 'navbar.html' %}
 
   <body>
     <center><h1 class="sansserif">
         Our Findings
     </h1></center>
-
-    <!-- Highcharts files -->
-    <!-- <script src="../Highcharts/code/highcharts.js"></script>
-    <script src="../Highcharts/code/modules/exporting.js"></script>
-    <script src="../Highcharts/code/highcharts-3d.js"></script> -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.11/highcharts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.11/js/modules/exporting.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.11/js/highcharts-3d.js"></script>
 
     <!-- VISUALISATION 1: Bar-graph negative -->
     <div
@@ -39,7 +28,7 @@
     </div>
     <script
         type="text/javascript"
-        src="../visualisations/bar-negative.js">
+        src="../static/visualisations/bar-negative.js">
     </script>
     <p></p>
 
@@ -55,7 +44,7 @@
 
     <script
         type="text/javascript"
-        src="../visualisations/bar-basic.js">
+        src="../static/visualisations/bar-basic.js">
     </script>
     <p></p>
 
@@ -70,7 +59,7 @@
 
     <script
         type="text/javascript"
-        src="../visualisations/pie.js">
+        src="../static/visualisations/pie.js">
     </script>
     <p></p>
 
