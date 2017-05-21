@@ -26,24 +26,44 @@ def pivottable_api():
     #set mime type to application/json
     return json_pivottable
 
+@app.route("/api/pivottable")
+def pivottable_api():
+    #csv_list should have been passed as a global variable
+    index = request.args.get('index')
+    values = request.args.get('values')
+    filtering = request.args.get('filtering')
+    pivot_data = pivot(index, values, filtering, csv_list)
+    #json_pivottable = pivot_data to json
+    #set mime type to application/json
+    return json_pivottable
+
 @app.route("/pivottable")
 def pivottable():
     template = 'pivottable.html'
     return render_template(template)
 
-@app.route("/")
-def about():
-    template = 'home.html'
+
+@app.route("/navbar")
+def navbar():
+    template = 'navbar.html'
     return render_template(template)
 
-@app.route('/<row_id>/')
-def detail(row_id):
-    template = 'IDtest.html'
-    object_list = get_csv()
-    for row in object_list:
-        if row['ID'] == row_id:
-            return render_template(template, object=row)
-    abort(404)
+
+@app.route("/")
+def index():
+    template = 'index.html'
+    return render_template(template)
+
+@app.route("/about")
+def about():
+    template = 'about.html'
+    return render_template(template)
+
+@app.route("/findings")
+def findings():
+    template = 'findings.html'
+    return render_template(template)
+
 
 if __name__ == '__main__':
     # Fire up the Flask test server
