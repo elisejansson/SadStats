@@ -26,15 +26,19 @@ def pivottable_api():
     #set mime type to application/json
     return json_pivottable
 
+
+
 @app.route("/pivottable")
 def pivottable():
     template = 'pivottable.html'
     return render_template(template)
 
+
 @app.route("/navbar")
 def navbar():
     template = 'navbar.html'
     return render_template(template)
+
 
 @app.route("/")
 def index():
@@ -55,5 +59,4 @@ def findings():
 if __name__ == '__main__':
     # Fire up the Flask test server
     csv_list = get_csv()
-    print csv_list
     app.run(debug=True, use_reloader=True)
