@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
 {% include 'navbar.html' %}
 <body>
+  <p> hey </p>
+  <div class="form-group">
+    <label for="exampleSelect1">Filter</label>
+    <select class="form-control" id="exampleSelect1">
+      <option selected>Choose a filter</option>
+      <option>Year</option>
+      <option>State</option>
+    </select>
+  </div>
 </body>
 </html>

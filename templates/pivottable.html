@@ -1,32 +1,29 @@
-
-<!doctype html>
-<html lang="en">
-    <head></head>
-    {% include 'navbar.html' %}
-    <body>
-        <h1>The Data</h1>
-        <table border=1 cellpadding=7>
-            <tr>
-                <th>ID</th>
-                <th>Year</th>
-                <th>Cause</th>
-                <th>State</th>
-                <th>Deaths</th>
-                <th>AADR</th>
-            </tr>
-            {% for obj in object_list %}
-            <tr>
-                <td>{{ obj.ID }}</td>
-                <td>{{ obj.YEAR }}</td>
-                <td>{{ obj.CAUSE_NAME }}</td>
-                <td>{{ obj.STATE }}</td>
-                <td>{{ obj.DEATHS }}</td>
-                <td>{{ obj.AADR }}</td>
-
-
-
-            </tr>
-            {% endfor %}
-        </table>
-    </body>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/pivot.css') }}">
+</head>
+{% include 'navbar.html' %}
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md">
+      col 1
+    </div>
+    <div class="col-md form-column">
+      <div class="form-group">
+        <label for="exampleSelect1">Filter</label>
+        <select class="form-control" id="exampleSelect1">
+          <option selected>Choose a filter</option>
+          <option>Year</option>
+          <option>State</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md">
+      col 3
+    </div>
+  </div>
+</div>
+</body>
 </html>
