@@ -1,22 +1,18 @@
 .wrapper {
 	padding: 20px;
+
 }
+
 
 .form-group {
   max-width: 100%;
-  padding: 15px 35px 45px;
+	height: 200px;
+  padding: 15px 35px 15px;
   background: rgba(255,255,255,0.9);
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 25px;
 	}
 
-.index {
-  max-width: 400px;
-}
-
-.test {
-  max-width: 400px;
-}
 
 .form-control {
     position: relative;

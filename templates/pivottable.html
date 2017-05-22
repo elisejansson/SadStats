@@ -4,31 +4,59 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/pivot.css') }}">
 </head>
 {% include 'navbar.html' %}
+<script>
+var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+</script>
 <body>
 <div class="container-fluid">
   <div class="wrapper">
-    <div class="row">
-    <form action="/api/pivottable" method="get">
-      <div class="form-group test">
-        <label for="example-text-input" class="col-2 col-form-label">Index</label>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="index" value="YEAR"> Year
-            </br>
-            <input class="form-check-input" type="checkbox" name="index" value="CAUSE_NAME"> Cause of death
-            </br>
-            <input class="form-check-input" type="checkbox" name="index" value="CAUSE_NAME"> State
-          </label>
+    <div class="row customization">
+      <form action="/api/pivottable" method="get">
+        <div class="col-sm-4">
+          <div class="form-group index-form">
+            <label for="custom-control custom-checkbox">Pick Index* (at least one)</label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="custom-control-input" type="checkbox" name="index_y" value="YEAR"> Year
+                </br>
+                <input class="form-check-input" type="checkbox" name="index_c" value="CAUSE_NAME" > Cause of death
+                </br>
+                <input class="form-check-input" type="checkbox" name="index_s" value="STATE" > State
+              </label>
+            </div>
+          </div>
         </div>
-        <input class="btn btn-primary" type="submit" value="Submit">
-      </div>
+        <div class="col-sm-4">
+          <div class="form-group values-form">
+            <label for="example-text-input" class="col-form-label">Pick value* (at least one)</label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="value_d" value="DEATHS"> Deaths
+                </br>
+                <input class="form-check-input" type="checkbox" name="value_a" value="AADR"> AADR
+                </br></br>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group columns-form">
+            <label for="example-text-input" class="col-form-label">Pick column* (cannot be same as index)</label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="column_y" value="YEAR"> Year
+                </br>
+                <input class="form-check-input" type="checkbox" name="column_c" value="CAUSE_NAME"> Cause of death
+              </label>
+            </div>
+          </div>
+        </div>
+      <input class="btn btn-primary" type="submit" value="Add">
+    </form>
+    <br>
     </div>
-  </form>
-  <div class="row pivottable">
-    <h1> Pivot Table </h1>
-  </div>
   </div>
 </div>
-
 </body>
 </html>
