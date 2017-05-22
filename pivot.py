@@ -1,14 +1,5 @@
 import pandas as pd
 import numpy as np
-import csv
-
-
-def get_csv():
-    csv_path = './data.csv'
-    csv_file = open(csv_path, 'rb')
-    csv_obj = csv.DictReader(csv_file)
-    csv_list = list(csv_obj) #to create permanent list
-    return csv_list
 
 def correct_types(raw_data):
     for row in raw_data:
@@ -33,6 +24,7 @@ def correct_types(raw_data):
                     row[item] = float(row[item])
     return raw_data
 
+
 def clean_list(pt_list):
     new_list = []
     for item in pt_list:
@@ -40,11 +32,13 @@ def clean_list(pt_list):
             new_list.append(item)
     return new_list
 
+
 def clean_dict(pt_filtering):
     for item in pt_filtering:
         if pt_filtering[item] == 'None':
             pt_filtering[item] = None
     return pt_filtering
+
 
 def clean_aggfunc(pt_aggfunc):
     #np.set_printoptions(precision=2)
@@ -52,6 +46,7 @@ def clean_aggfunc(pt_aggfunc):
         return np.mean
     else:
         return np.sum
+
 
 def filter_data(data, filtering):
     filtered_data = []
@@ -75,33 +70,26 @@ def filter_data(data, filtering):
             filtered_data.append(row)
     return filtered_data
 
-#def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc, csv_list):
-def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc):
 
+def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc, csv_list):
 
-    raw_data = get_csv()
-    #data = correct_types(csv_list)
-    data = correct_types(raw_data)
+    data = correct_types(csv_list)
 
     pt_index = clean_list(pt_index)
     pt_columns = clean_list(pt_columns)
     pt_values = clean_list(pt_values)
-
     pt_filtering = clean_dict(pt_filtering)
-
     pt_aggfunc = clean_aggfunc(pt_aggfunc)
 
     filtered_data = filter_data(data, pt_filtering)
 
     df = pd.DataFrame(filtered_data, columns = ['YEAR', 'CAUSE_NAME', 'STATE', 'DEATHS', 'AADR'])
 
-
     pivot_table = pd.pivot_table(df, index=pt_index, columns=pt_columns,
     values=pt_values, aggfunc=pt_aggfunc)
 
-    pivot_table.rename_axis({'YEAR': 'Year', 'CAUSE_NAME':
-    'Cause', 'AADR': 'Age Adjusted Death Rate'}, inplace=True)
-
+    #pivot_table.rename_axis({'YEAR': 'Year', 'CAUSE_NAME':
+    #'Cause', 'AADR': 'Age Adjusted Death Rate'}, inplace=True)
 
     html_pivottable = pd.DataFrame.to_html(pivot_table, buf=None, columns=None,
     col_space=None, header=True, index=True, na_rep='NaN', formatters=None,
@@ -109,8 +97,4 @@ def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc):
     bold_rows=True, classes=None, escape=True, max_rows=None, max_cols=None,
     show_dimensions=False, notebook=False, decimal='.', border=None)
 
-    #print html_pivottable
     return html_pivottable
-
-#pivot(['YEAR', 'None', 'None'],['None', 'None'],['None', 'None'],{'STATE': 'None', 'CAUSE_NAME': 'None', 'YEAR': 'None'}, 'np.mean')
-#pivot(['YEAR', 'None', 'None'], [], ["DEATHS"], {'YEAR':'2003','STATE':'None','CAUSE_NAME':'None'}, np.sum)

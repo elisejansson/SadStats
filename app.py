@@ -41,7 +41,7 @@ def pivottable_api():
     filtering_c = request.args.get('filtering_c')
 
     filtering = {'YEAR':str(filtering_y),'STATE':str(filtering_s),'CAUSE_NAME':str(filtering_c)}
-    pivot_data = pivot(index, columns, values, filtering, aggfunc) #returns as html script
+    pivot_data = pivot(index, columns, values, filtering, aggfunc, csv_list) #returns as html script
 
     template = 'pivotTable.html'
 
