@@ -36,6 +36,11 @@ var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
                 </br>
                 <input class="form-check-input" type="checkbox" name="value_a" value="AADR"> AADR
                 </br></br>
+                <label>Value type</label>
+                  <select class="form-control" name="aggfunc">
+                    <option value="mean">Average</option>
+                    <option value="sum">Total</option>
+                  </select>
               </label>
             </div>
           </div>
@@ -52,7 +57,7 @@ var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
             </div>
           </div>
         </div>
-      <input class="btn btn-primary" type="submit" value="Add">
+      <input class="btn btn-primary btn-lg" type="submit" value="Add">
     </form>
     <br>
     </div>

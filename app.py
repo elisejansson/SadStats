@@ -20,19 +20,12 @@ def get_csv():
 def pivottable_api():
 
     # #csv_list should have been passed as a global variable
-    index_y = request.args.get('index_y')
-    index_c = request.args.get('index_c')
-    index_s = request.args.get('index_s') #should be list
-    values_a = request.args.get('value_a')
-    values_d = request.args.get('value_d') #should be list
-    #columns = request.args.get('columns') #should be list
+    index = request.args.get('index') #should be list
+    values = request.args.get('values') #should be list
+    columns = request.args.get('columns') #should be list
     #filtering = request.args.get('filtering') #should be dictionary
     #filtering = {'YEAR':None,'STATE':None,'CAUSE_NAME':None}
-    return index_y
-    return index_c
-    return index_s
-    return value_a
-    return value_d
+    return index 
     #pivot_data = pivot(index, values, columns, filtering) #returns as json
     # #set mime type to application/json
 
