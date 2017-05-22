@@ -29,7 +29,7 @@
 .pivottable {
   max-width: 100%;
   padding: 15px 35px 45px;
-  background: rgba(255,255,255,0.9);
+  background: red;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 25px;
 }
