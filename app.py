@@ -19,7 +19,7 @@ def get_csv():
 @app.route("/api/pivottable", methods=['GET'])
 def pivottable_api():
 
-    # #csv_list should have been passed as a global variable
+    #csv_list should have been passed as a global variable
     index_y = request.args.get('index_y')
     index_c = request.args.get('index_c')
     index_s = request.args.get('index_s')
@@ -46,7 +46,6 @@ def pivottable_api():
     return str(values)
     #pivot_data = pivot(index, columns, values, filtering, aggfunc, csv_list) #returns as html script
     #set mime type to application/json
-
     #return pivot_data
 
 @app.route("/pivottable")
