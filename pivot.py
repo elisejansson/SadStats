@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import csv
 
+
 def get_csv():
     csv_path = './data.csv'
     csv_file = open(csv_path, 'rb')
@@ -39,19 +40,18 @@ def clean_list(pt_list):
             new_list.append(item)
     return new_list
 
-def find_aggfunc(aggfunc):
-    for item in aggfunc:
-        if item == 'mean':
-            return np.mean
-        elif item == 'sum':
-            return np.sum
-
 def clean_dict(pt_filtering):
     for item in pt_filtering:
         if pt_filtering[item] == 'None':
             pt_filtering[item] = None
     return pt_filtering
 
+def clean_aggfunc(pt_aggfunc):
+    #np.set_printoptions(precision=2)
+    if pt_aggfunc == 'np.mean':
+        return np.mean
+    else:
+        return np.sum
 
 def filter_data(data, filtering):
     filtered_data = []
@@ -75,8 +75,9 @@ def filter_data(data, filtering):
             filtered_data.append(row)
     return filtered_data
 
-#def pivot(pt_index, pt_columns, pt_values, pt_filtering, csv_list):
-def pivot(pt_index, pt_columns, pt_values, pt_filtering, aggfunc):
+#def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc, csv_list):
+def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc):
+
 
     raw_data = get_csv()
     #data = correct_types(csv_list)
@@ -86,8 +87,9 @@ def pivot(pt_index, pt_columns, pt_values, pt_filtering, aggfunc):
     pt_columns = clean_list(pt_columns)
     pt_values = clean_list(pt_values)
 
-    pt_aggfunc = find_aggfunc(aggfunc)
     pt_filtering = clean_dict(pt_filtering)
+
+    pt_aggfunc = clean_aggfunc(pt_aggfunc)
 
     filtered_data = filter_data(data, pt_filtering)
 
@@ -96,19 +98,19 @@ def pivot(pt_index, pt_columns, pt_values, pt_filtering, aggfunc):
 
     pivot_table = pd.pivot_table(df, index=pt_index, columns=pt_columns,
     values=pt_values, aggfunc=pt_aggfunc)
-    print pivot_table
+
+    pivot_table.rename_axis({'YEAR': 'Year', 'CAUSE_NAME':
+    'Cause', 'AADR': 'Age Adjusted Death Rate'}, inplace=True)
+
 
     html_pivottable = pd.DataFrame.to_html(pivot_table, buf=None, columns=None,
     col_space=None, header=True, index=True, na_rep='NaN', formatters=None,
-    float_format=None, sparsify=None, index_names=True, justify=None,
+    float_format=lambda x: '%10.2f' % x, sparsify=None, index_names=True, justify=None,
     bold_rows=True, classes=None, escape=True, max_rows=None, max_cols=None,
     show_dimensions=False, notebook=False, decimal='.', border=None)
 
     #print html_pivottable
+    return html_pivottable
 
-
-    #json_pt = pivot_table.to_json(double_precision=2,orient='columns')
-    #print json_pt
-    #return json_pt
-
-pivot(['YEAR', 'None', 'None'], [], ["DEATHS"], {'YEAR':'2003','STATE':'None','CAUSE_NAME':'None'}, ['None', 'sum'])
+#pivot(['YEAR', 'None', 'None'],['None', 'None'],['None', 'None'],{'STATE': 'None', 'CAUSE_NAME': 'None', 'YEAR': 'None'}, 'np.mean')
+#pivot(['YEAR', 'None', 'None'], [], ["DEATHS"], {'YEAR':'2003','STATE':'None','CAUSE_NAME':'None'}, np.sum)
