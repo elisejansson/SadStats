@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 from flask import Flask
 from flask import request
-from pivot import pivot
 from flask import abort #error messageing
 from flask import render_template #to combine data with htmls
+from pivot import pivot
 
 
 app = Flask(__name__)
@@ -20,7 +20,6 @@ def get_csv():
 @app.route("/pivottable_results", methods=['GET'])
 def pivottable_api():
 
-    #csv_list should have been passed as a global variable
     index_y = request.args.get('index_y')
     index_c = request.args.get('index_c')
     index_s = request.args.get('index_s')
@@ -39,10 +38,9 @@ def pivottable_api():
     filtering_y = request.args.get('filtering_y')
     filtering_s = request.args.get('filtering_s')
     filtering_c = request.args.get('filtering_c')
-
     filtering = {'YEAR':str(filtering_y),'STATE':str(filtering_s),'CAUSE_NAME':str(filtering_c)}
-    pivot_data = pivot(index, columns, values, filtering, aggfunc, csv_list) #returns as html script
 
+    pivot_data = pivot(index, columns, values, filtering, aggfunc, csv_list) #returns as html script
     template = 'pivotTable.html'
 
     return render_template(template, table=pivot_data)
