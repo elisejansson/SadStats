@@ -1,0 +1,29 @@
+
+.table-container {
+  padding: 20px;
+
+}
+
+
+
+.vGood {
+    background-color: #9f0;
+}
+
+.good {
+    background-color: #cf0;
+}
+
+.avg {
+    background-color: #fd0;
+}
+
+.poor {
+    background-color: #fa0;
+}
+
+.vPoor {
+    background-color: #f30;
+}
+=======
+

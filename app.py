@@ -63,8 +63,10 @@ def about():
 
 @app.route("/findings")
 def findings():
+    #process data structure before passing to template, using same global as in the others
     template = 'findings.html'
     return render_template(template)
+
 
 
 if __name__ == '__main__':

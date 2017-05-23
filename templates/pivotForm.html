@@ -1,65 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/pivot.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
 </head>
+
 {% include 'navbar.html' %}
-
 <body>
-<div class="container-fluid">
+<div class="container-fluid background">
   <div class="wrapper">
-    <div class="row customization">
-      <form action="/pivottable_results" method="get">
-        <div class="col-sm-4">
-          <div class="form-group index-form">
-            <label for="custom-control custom-checkbox">Pick Index* (at least one)</label>
-            <div class="form-check">
-              <label class="form-check-label">
+<!-- Start of form -->
+    <form action="/pivottable_results" method="get">
+        <div class="row">
+          <div class="col-sm-4">
+            <!-- Start of index group -->
+            <div class="form-group index-form">
+              <h4>Pick Index* (at least one)</h4>
                 <input class="custom-control-input" type="checkbox" name="index_y" value="YEAR"> Year
-                </br>
-                <input class="form-check-input" type="checkbox" name="index_c" value="CAUSE_NAME" > Cause of death
-                </br>
-                <input class="form-check-input" type="checkbox" name="index_s" value="STATE" > State
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="form-group values-form">
-            <label for="example-text-input" class="col-form-label">Pick value* (at least one)</label>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="value_d" value="DEATHS"> Deaths
-                </br>
-                <input class="form-check-input" type="checkbox" name="value_a" value="AADR"> AADR
                 </br></br>
-                <label>Value type</label>
-                  <select class="form-control" name="aggfunc">
-                    <option value="np.mean">Average</option>
-                    <option value="np.sum">Total</option>
-                  </select>
-              </label>
+                <input class="form-check-input" type="checkbox" name="index_c" value="CAUSE_NAME" > Cause of death
+                </br></br>
+                <input class="form-check-input" type="checkbox" name="index_s" value="STATE" > State
             </div>
+            <!-- End of index group -->
           </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="form-group columns-form">
-            <label for="example-text-input" class="col-form-label">Pick column* (cannot be same as index)</label>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="column_y" value="YEAR"> Year
+          <div class="col-sm-4">
+            <!-- Start of Values group -->
+            <div class="form-group values-form">
+              <h4>Pick value* (at least one)</h4>
+                <input class="form-check-input" type="checkbox" name="value_d" value="DEATHS"> Deaths
+                </br></br>
+                <input class="form-check-input" type="checkbox" name="value_a" value="AADR"> AADR
                 </br>
-                <input class="form-check-input" type="checkbox" name="column_c" value="CAUSE_NAME"> Cause of death
-              </label>
+                <h5>Value type</h5>
+                    <select class="form-control" name="aggfunc">
+                      <option value="np.mean">Average</option>
+                      <option value="np.sum">Total</option>
+                    </select>
             </div>
+            <!-- End of Values group -->
+          </div>
+          <div class="col-sm-4">
+            <!-- Start of columns group -->
+            <div class="form-group columns-form">
+              <h4>Pick column (cannot be same as index)</h4>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="column_y" value="YEAR"> Year
+                </br></br>
+                <input class="form-check-input" type="checkbox" name="column_c" value="CAUSE_NAME"> Cause of death
+              </div>
+            </div>
+            <!-- End of columns group -->
           </div>
         </div>
-      <input class="btn btn-primary btn-lg" type="submit" value="Add">
+        <div class="row">
+              <!-- Start of filter-->
+              <div class="form-group filter-form">
+                <h4> Add Filter: </h4>
+                <div class="col-sm-4">
+                  <select class="form-control filter-year" name="filter_y">
+                    <option value="" selected disabled>Year</option>
+                    <option value="">2003</option>
+                    <option value="">2004</option>
+                    <option value="">2005</option>
+                    <option value="">2006</option>
+                    <option value="">2007</option>
+                    <option value="">2008</option>
+                    <option value="">2009</option>
+                    <option value="">2010</option>
+                    <option value="">2011</option>
+                    <option value="">2012</option>
+                    <option value="">2013</option>
+                  </select>
+                </div>
+                <div class="col-sm-4">
+                  <select class="form-control filter-cause" name="filter_c">
+                    <option value="" selected disabled>Cause of Death</option>
+                    <option value="">Alzheimer's disease</option>
+                  </select>
+                </div>
+                <div class="col-sm-4">
+                  <select class="form-control filter-state" name="filter_s">
+                    <option value="" selected disabled>State</option>
+                    <option value="">Alabama</option>
+                  </select>
+                </div>
+              </div>
+              <!-- End of filter-->
+            </div>
+        </div>
+        <div class="row button-row">
+          <!-- Submit Button -->
+          <button class="btn btn-danger btn-lg reset-button" type="reset" value="Reset">Reset</button>
+          <input class="btn btn-primary btn-lg create-button" type="submit" value="Create Pivot Table">
+        </div>
     </form>
-    <br>
-    </div>
   </div>
 </div>
+<!-- End of form -->
 </body>
 </html>
