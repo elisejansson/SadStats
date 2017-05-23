@@ -2,29 +2,62 @@
 <html>
     <head>
     <title>Our Findings</title>
-
+    {% include 'navbar.html' %}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <style>
-    h1.sansserif {
-        font-family: Arial, Helvetica, sans-serif;
+    div.primary {
+        background-color: #FFFFFF;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+        font-style: italic;
+        displ
+    }
+
+
+    .outer-primary {
+
+         max-width: 1200px;
+         display: flex;
+        justify-content: center;
+    }
+    p.title {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 60px;
+        font-weight: bold;
     }
     </style>
 
-  </head>
-{% include 'navbar.html' %}
+    <!-- BODY -->
+    <body>
+    <center><p class="title">Our Findings</p></center>
 
-  <body>
-    <center><h1>
-        Our Findings
-    </h1></center>
 
-    <!-- VISUALISATION 1: Bar-graph negative -->
+    <!-- MAP -->
+    <div id="container3" style="height: 500px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
+    <script type="text/javascript" src="../static/visualisations/map-us.js"></script>
+
+    <!-- VISUALISATION 1: Pie-graph -->
+
+    <div style="width: 100%; overflow: hidden; padding: 20px;">
+        <div class="outer-primary">
+            <div id="container2" style="width: 600px; height: 400px"></div>
+            <div class="primary" style="margin-left: 620px">Over 25% of all deaths in the US are heart related</div>
+        </div>
+    </div>
+
+    <script
+        type="text/javascript"
+        src="../static/visualisations/pie.js">
+    </script>
+    <p></p>
+    <!-- VISUALISATION 2: Bar-graph negative -->
     <div
         id="container0"
         style=  "min-width: 310px;
                 max-width: 800px;
                 height: 400px;
-                margin: 0 auto;
-                border: 1px solid black">
+                margin: 0 auto">
     </div>
     <script
         type="text/javascript"
@@ -32,14 +65,13 @@
     </script>
     <p></p>
 
-    <!-- VISUALISATION 2: Bar-graph basic-->
+    <!-- VISUALISATION 3: Bar-graph basic-->
     <div
         id="container1"
         style=  "min-width: 310px;
                 max-width: 800px;
                 height: 1000px;
-                margin: 0 auto;
-                border: 1px solid black">
+                margin: 0 auto">
     </div>
 
     <script
@@ -48,21 +80,6 @@
     </script>
     <p></p>
 
-    <!-- VISUALISATION 3: Pie-graph -->
-    <div
-        id="container2"
-        style=  "max-width: 800px;
-                height: 400px;
-                margin: 0 auto;
-                border: 1px solid black">
-    </div>
+    </body>
 
-    <script
-        type="text/javascript"
-        src="../static/visualisations/pie.js">
-    </script>
-    <p></p>
-
-
-  </body>
 </html>
