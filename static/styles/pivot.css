@@ -27,11 +27,8 @@
   }
 
 .pivottable {
-  max-width: 100%;
-  padding: 15px 35px 45px;
-  background: red;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 25px;
+	max-width: 200px;
+	color: red;
 }
 
 .about-group {
