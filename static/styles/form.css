@@ -1,0 +1,70 @@
+
+.extra {
+  height: 130px;
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+
+.index-form{
+  max-width: 100%;
+	height: 200px;
+  padding: 15px 35px 15px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 25px;
+	}
+
+.values-form{
+  max-width: 100%;
+	height: 200px;
+  padding: 15px 35px 15px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 25px;
+	}
+
+.columns-form{
+  max-width: 100%;
+	height: 200px;
+  padding: 15px 35px 15px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 25px;
+	}
+
+.filter-form{
+	max-width: 90%;
+	min-height: 130px;
+	margin: auto;
+  padding: 15px 35px 15px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 25px;
+	}
+
+.form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    @include box-sizing(border-box);
+    &:focus {
+      z-index: 2;
+    }
+  }
+
+
+	input[type=checkbox] {
+	  -ms-transform: scale(1.4); /* IE */
+	  -moz-transform: scale(1.4); /* FF */
+	  -webkit-transform: scale(1.4); /* Safari and Chrome */
+	  -o-transform: scale(1.4); /* Opera */
+		cursor: pointer;
+	}
+
+.button-row {
+	text-align: center;
+}

@@ -14,7 +14,6 @@ Highcharts.chart('container0', {
     type: 'bar',
     borderRadius: '25px'
   },
-
   title: {
     text: 'Percentage change in number of deaths between 2003-2013'
   },
@@ -29,6 +28,7 @@ Highcharts.chart('container0', {
         text: 'Percentage',
         align: 'middle'
     }
+
   },
   credits: {
     enabled: false
@@ -37,6 +37,7 @@ Highcharts.chart('container0', {
     name: 'Percentage change',
     color: '#D1382F',
     negativeColor: '#0392CF',
+
     data: [5.73, 25.14, 4.78, 24.5, 15.3, 1.8, -12.11, 28.7, -9.99, -14.36,
     9.89, 28.57, 6.7, 10.71, -22.26, 23.49, 16.3]
   }]
