@@ -1,5 +1,5 @@
 
-$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=us-population-density.json&callback=?', function (data) {
+$.getJSON('/highcharts-us-data.json', function (data) {
 
     // Make codes uppercase to match the map data
     $.each(data, function () {
