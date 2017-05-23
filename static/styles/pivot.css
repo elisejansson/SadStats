@@ -1,6 +1,11 @@
+
 .table-container {
   padding: 20px;
 
+}
+
+.pivottable {
+  color: red;
 }
 
 td {
@@ -29,3 +34,4 @@ td {
 .vPoor {
     background-color: #f30;
 }
+=======
