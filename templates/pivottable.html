@@ -2,28 +2,28 @@
 <html>
 <head>
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/pivot.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='pivot.js') }}"></script>
+<script>
+$(function() {
+       $('tr > td:odd').each(function(index) {
+           var scale = [['vPoor', 10], ['poor', 50], ['avg', 250], ['good', 1250], ['vGood', 6250]];
+           var score = $(this).text();
+           for (var i = 0; i < scale.length; i++) {
+               if (score <= scale[i][1]) {
+                   $(this).addClass(scale[i][0]);
+               }
+           }
+       });
+  });
+</script>
 </head>
 {% include 'navbar.html' %}
 <body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md">
-      col 1
-    </div>
-    <div class="col-md form-column">
-      <div class="form-group">
-        <label for="exampleSelect1">Filter</label>
-        <select class="form-control" id="exampleSelect1">
-          <option selected>Choose a filter</option>
-          <option>Year</option>
-          <option>State</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-md">
-      col 3
+
+  <div class="container-fluid table-container">
+    <div style="overflow-x:auto;">
+      {{ table|safe }}
     </div>
   </div>
-</div>
 </body>
 </html>

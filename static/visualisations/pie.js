@@ -8,6 +8,7 @@
 
 // http://jsfiddle.net/vps8kp8s/
 
+
 Highcharts.chart('container2', {
     chart: {
         borderColor: 'grey',
@@ -41,7 +42,9 @@ Highcharts.chart('container2', {
     series: [{
         type: 'pie',
         name: 'percentage of all deaths',
+
         colors: ['#D1382F', '#F37736','#FFEC50', '#7BC043','#0392CF','#D3D3D3'],
+
         data: [
         		{
             		name: 'Diseases of Heart',
