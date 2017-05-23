@@ -1,3 +1,16 @@
+.background{
+  height: 160vh;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url("https://68.media.tumblr.com/8ef21ca6ced6109b67abcdcef42a2512/tumblr_nzg0gf5c0f1u25x88o1_1280.jpg") no-repeat center center fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.wrapper {
+  padding: 20px;
+}
 
 .index-form{
   max-width: 100%;
@@ -42,16 +55,19 @@
     height: auto;
     padding: 10px;
     @include box-sizing(border-box);
-
     &:focus {
       z-index: 2;
     }
   }
 
 
-.reset-button {
-	margin: 15px;
-}
+	input[type=checkbox] {
+	  -ms-transform: scale(1.4); /* IE */
+	  -moz-transform: scale(1.4); /* FF */
+	  -webkit-transform: scale(1.4); /* Safari and Chrome */
+	  -o-transform: scale(1.4); /* Opera */
+		cursor: pointer;
+	}
 
 .button-row {
 	text-align: center;

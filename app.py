@@ -1,10 +1,11 @@
 import csv
 import pandas as pd
+import numpy as np
 from flask import Flask
 from flask import request
-import pivot
 from flask import abort #error messageing
-from flask import render_template #to combine data with html
+from flask import render_template #to combine data with htmls
+from pivot import pivot
 
 
 app = Flask(__name__)
@@ -19,34 +20,30 @@ def get_csv():
 @app.route("/pivottable_results", methods=['GET'])
 def pivottable_api():
 
-    #csv_list should have been passed as a global variable
     index_y = request.args.get('index_y')
     index_c = request.args.get('index_c')
     index_s = request.args.get('index_s')
     index = [str(index_y), str(index_c), str(index_s)]
 
-    values_a = request.args.get('values_a')
-    values_d = request.args.get('values_d')
-    values = [str(values_a), str(values_d)]
+    value_a = request.args.get('value_a')
+    value_d = request.args.get('value_d')
+    values = [str(value_a), str(value_d)]
 
-    columns_y = request.args.get('columns_y')
-    columns_c = request.args.get('columns_c')
-    columns = [str(columns_c), str(columns_y)]
+    column_y = request.args.get('column_y')
+    column_c = request.args.get('column_c')
+    columns = [str(column_c), str(column_y)]
 
-    aggfunc_s = request.args.get('aggfunc_s')
-    aggfunc_m = request.args.get('aggfunc_m')
-    aggfunc = [str(aggfunc_m), str(aggfunc_s)]
+    aggfunc = str(request.args.get('aggfunc'))
 
     filtering_y = request.args.get('filtering_y')
     filtering_s = request.args.get('filtering_s')
     filtering_c = request.args.get('filtering_c')
+    filtering = {'YEAR':str(filtering_y),'STATE':str(filtering_s),'CAUSE_NAME':str(filtering_c)}
 
-    filtering = {'YEAR':filtering_y,'STATE':filtering_s,'CAUSE_NAME':filtering_c}
+    pivot_data = pivot(index, columns, values, filtering, aggfunc, csv_list) #returns as html script
+    template = 'pivotTable.html'
 
-    return str(values)
-    #pivot_data = pivot(index, columns, values, filtering, aggfunc, csv_list) #returns as html script
-    #set mime type to application/json
-    #return pivot_data
+    return render_template(template, table=pivot_data)
 
 
 @app.route("/pivottable_form")
