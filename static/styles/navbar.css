@@ -23,14 +23,12 @@ body {
 
 .nav.navbar-nav li a {
     color: #5E6666;
-    width: 150px;
     height: 50px;
     text-align: center;
 }
 .nav.navbar-nav li a:hover {
     border: 1px solid #5E6666;
     border-radius: 25px;
-    width: 150px;
     height: 50px;
 }
 
