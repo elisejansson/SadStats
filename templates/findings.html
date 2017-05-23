@@ -1,85 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
     <title>Our Findings</title>
     {% include 'navbar.html' %}
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <style>
-    div.primary {
-        background-color: #FFFFFF;
-        font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 40px;
-        font-weight: bold;
-        font-style: italic;
-        displ
-    }
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/findings.css') }}">
 
+  <body>
+    <div class="wrapper">
+      <p class="title">Our Findings</p>
+      </br></br>
 
-    .outer-primary {
+<!-- map
+      <div id="container3"></div>
+      <script type="text/javascript" src="../static/visualisations/map-us.js"></script>
+    </br></br>-->
 
-         max-width: 1200px;
-         display: flex;
-        justify-content: center;
-    }
-    p.title {
-        font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 60px;
-        font-weight: bold;
-    }
-    </style>
-
-    <!-- BODY -->
-    <body>
-    <center><p class="title">Our Findings</p></center>
-
-
-    <!-- MAP -->
-    <div id="container3" style="height: 500px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
-    <script type="text/javascript" src="../static/visualisations/map-us.js"></script>
-
-    <!-- VISUALISATION 1: Pie-graph -->
-
-    <div style="width: 100%; overflow: hidden; padding: 20px;">
-        <div class="outer-primary">
-            <div id="container2" style="width: 600px; height: 400px"></div>
-            <div class="primary" style="margin-left: 620px">Over 25% of all deaths in the US are heart related</div>
+      <!-- VISUALISATION 1: Pie-graph -->
+      <div class="row pie-row">
+        <div class="col-sm-6">
+          <div id="container2"></div>
         </div>
+        <div class="col-sm-6 para-col">
+          <div class="primary">Over 25% of all deaths in the US are heart related</div>
+          <script type="text/javascript" src="../static/visualisations/pie.js"></script>
+        </div>
+      </div>
+      </br></br>
+
+      <!-- VISUALISATION 2: Bar-graph negative -->
+      <div class="row negative-row">
+        <div class="col-sm-5 para-col">
+          <div class="primary"> title here</div>
+        </div>
+        <div class="col-sm-7">
+          <div id="container0"></div>
+          <script type="text/javascript" src="../static/visualisations/bar-negative.js"></script>
+        </div>
+      </div>
+      </br></br>
+
+
+
+      <!-- VISUALISATION 3: Bar-graph basic-->
+      <div class="row basic-row">
+        <div class="col-sm-7">
+          <div id="container1"></div>
+          <script type="text/javascript" src="../static/visualisations/bar-basic.js"></script>
+        </div>
+        <div class="col-sm-5 para-col">
+          <div class="primary"> title here</div>
+        </div>
+      </div>  
+      </br></br>
     </div>
-
-    <script
-        type="text/javascript"
-        src="../static/visualisations/pie.js">
-    </script>
-    <p></p>
-    <!-- VISUALISATION 2: Bar-graph negative -->
-    <div
-        id="container0"
-        style=  "min-width: 310px;
-                max-width: 800px;
-                height: 400px;
-                margin: 0 auto">
-    </div>
-    <script
-        type="text/javascript"
-        src="../static/visualisations/bar-negative.js">
-    </script>
-    <p></p>
-
-    <!-- VISUALISATION 3: Bar-graph basic-->
-    <div
-        id="container1"
-        style=  "min-width: 310px;
-                max-width: 800px;
-                height: 1000px;
-                margin: 0 auto">
-    </div>
-
-    <script
-        type="text/javascript"
-        src="../static/visualisations/bar-basic.js">
-    </script>
-    <p></p>
-
-    </body>
-
+  </body>
 </html>
