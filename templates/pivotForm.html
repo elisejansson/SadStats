@@ -8,6 +8,10 @@
 <body>
 <div class="container-fluid background">
   <div class="wrapper">
+    <p class="text-center form-title">
+      Build your own pivot table!
+    </p>
+
 <!-- Start of form -->
     <form action="/pivottable_results" method="get">
         <div class="row">
@@ -15,11 +19,11 @@
             <!-- Start of index group -->
             <div class="form-group index-form">
               <h4>Pick Index* (at least one)</h4>
-                <input class="custom-control-input" type="checkbox" name="index_y" value="YEAR"> Year
+                <input class="custom-control-input" type="checkbox" name="index_y" value="YEAR"> &nbsp; Year
                 </br></br>
-                <input class="form-check-input" type="checkbox" name="index_c" value="CAUSE_NAME" > Cause of death
+                <input class="form-check-input" type="checkbox" name="index_c" value="CAUSE_NAME" > &nbsp; Cause of death
                 </br></br>
-                <input class="form-check-input" type="checkbox" name="index_s" value="STATE" > State
+                <input class="form-check-input" type="checkbox" name="index_s" value="STATE" > &nbsp; State
             </div>
             <!-- End of index group -->
           </div>
@@ -27,9 +31,9 @@
             <!-- Start of Values group -->
             <div class="form-group values-form">
               <h4>Pick value* (at least one)</h4>
-                <input class="form-check-input" type="checkbox" name="value_d" value="DEATHS"> Deaths
+                <input class="form-check-input" type="checkbox" name="value_d" value="DEATHS"> &nbsp; Deaths
                 </br></br>
-                <input class="form-check-input" type="checkbox" name="value_a" value="AADR"> AADR
+                <input class="form-check-input" type="checkbox" name="value_a" value="AADR"> &nbsp; AADR
                 </br>
                 <h5>Value type</h5>
                     <select class="form-control" name="aggfunc">
@@ -44,9 +48,9 @@
             <div class="form-group columns-form">
               <h4>Pick column (cannot be same as index)</h4>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="column_y" value="YEAR"> Year
+                <input class="form-check-input" type="checkbox" name="column_y" value="YEAR"> &nbsp; Year
                 </br></br>
-                <input class="form-check-input" type="checkbox" name="column_c" value="CAUSE_NAME"> Cause of death
+                <input class="form-check-input" type="checkbox" name="column_c" value="CAUSE_NAME"> &nbsp; Cause of death
               </div>
             </div>
             <!-- End of columns group -->

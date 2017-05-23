@@ -4,34 +4,20 @@
 
 }
 
-.pivottable {
-  color: red;
+.anchors {
+  margin-left: 40%;
 }
 
+.anchor1 {
+  margin-left: 20px;
+  position: fixed;
+}
+.anchor2 {
+  margin-left: 130px;
+  position: fixed;
+}
 td {
   background-color: #eee;
   font-weight: bold;
   text-align: center;
 }
-
-
-.vGood {
-    background-color: #9f0;
-}
-
-.good {
-    background-color: #cf0;
-}
-
-.avg {
-    background-color: #fd0;
-}
-
-.poor {
-    background-color: #fa0;
-}
-
-.vPoor {
-    background-color: #f30;
-}
-=======
