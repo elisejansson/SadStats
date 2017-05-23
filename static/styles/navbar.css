@@ -1,16 +1,52 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Assistant', cursive;
+  font-weight: normal;
+  font-size: 15px;
+}
+
 .navbar  {
-  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
   margin:0;
 }
 
 .navbar-nav {
+  margin-top: 7px;
+  margin-bottom: 7px;
   font-size: 20px;
+  font-family: 'Assistant', cursive;
+  font-weight: normal;
 }
+
+.nav.navbar-nav li a {
+    color: #5E6666;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+}
+.nav.navbar-nav li a:hover {
+    border: 1px solid #5E6666;
+    border-radius: 25px;
+    width: 150px;
+    height: 50px;
+}
+
 .navbar-nav:checked {
   font-size: 20px;
   color: #fff;
 }
 
-.navbar-brand {
-  font-size: 30px;
+.navbar-default .navbar-brand {
+    margin-top: 5px;
+    color: #5E6666;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 50px;
+}
+.navbar-default .navbar-brand:hover {
+    color: #333;
+    font-family: 'Fredericka the Great', cursive;
+
 }

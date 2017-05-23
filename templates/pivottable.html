@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/pivot.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='pivot.js') }}"></script>
+
 </head>
 {% include 'navbar.html' %}
 <body>
 
-{{ table|safe}}
-
+  <div class="container-fluid table-container">
+    <div style="overflow-x:auto; overflow-y:auto;">
+      {{ table|safe }}
+    </div>
+  </div>
 </body>
 </html>
