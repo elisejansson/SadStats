@@ -1,18 +1,93 @@
 <!DOCTYPE html>
 <html>
-   <head>
-    <title>About</title>
-  </head>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/pivot.css') }}">
+<title>About</title>
+</head>
 {% include 'navbar.html' %}
   <body>
-    <p>
-      "About SadStats"
-    </p>
-    <p>
-      "So much to know about sad data"
-    </p>
-    <p>
-      "So much about death"
-    </p>
+    <h1 class="text-center">
+      Welcome to SadStats!
+    </h1>
+    <h3 class="text-center">
+      About the Data Set
+    </h3>
+    <div class="container-fluid">
+      <div class="wrapper">
+        <div class="row customization">
+
+          <div class="col-sm-4">
+            <div class="about-group processing-about">
+              <h4>
+                Processing
+              </h4>
+              <ul>
+                <li>
+                  Years between 1999 and 2002 were removed during pre-processing to
+                  provide a tighter data set
+                </li>
+                <li>
+                  Column 113_cause_name removed during pre-processing as it provided
+                  redundant information
+                </li>
+                <li>
+                  Items with a death count in the range [0, 20) have a not applicable
+                  age adjusted death rate
+                </li>
+              </ul>
+              <p>
+                Please note that items involving totals, such as 'All Causes'
+                and 'United States', were not included in pivot table calculations
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="about-group Definitions-about">
+              <h4>
+                Definitions
+              </h4>
+              <p>
+                <b>Year - </b>Specific year, spanning from 2003 until 2013
+              </p>
+              <p>
+                <b>Cause Name - </b>Specific cause, within the top 10 leading causes of
+                death in the United States over the specified range of years
+              </p>
+              <p>
+                <b>State - </b>Specific state of residence in the specified year,
+                within the United States
+              </p>
+              <p>
+                <b>Deaths - </b>Number of deaths, in the specified state and time period
+              </p>
+              <p>
+                <b>Age Adjusted Death Rate - </b>Rate that would have existed if the
+                population under study had the same age distribution as the "standard"
+                population, a summary measure adjusted for differences in age distributions.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="about-group source-about">
+              <h4>
+                Source
+              </h4>
+              <p>
+                Age-adjusted death rates for the top 10 leading causes of death in the
+                United States, including mortality patterns from 1999 through 2013, and
+                by state of residence for selected year and cause of death.
+              </p>
+              <p>
+                This data set was accessed from data.gov, the home of the United States Government's open data.
+              </p>
+              <a href="https://catalog.data.gov/dataset/age-adjusted-death-rates-for-the-top-10-leading-causes-of-death-united-states-2013">
+                Access this data set from data.gov
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

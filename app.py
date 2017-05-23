@@ -10,13 +10,6 @@ from pivot import pivot
 
 app = Flask(__name__)
 
-def get_csv():
-    csv_path = './data.csv'
-    csv_file = open(csv_path, 'rb')
-    csv_obj = csv.DictReader(csv_file)
-    csv_list = list(csv_obj) #to create permanent list
-    return csv_list
-
 @app.route("/pivottable_results", methods=['GET'])
 def pivottable_api():
 
@@ -40,7 +33,7 @@ def pivottable_api():
     filtering_c = request.args.get('filtering_c')
     filtering = {'YEAR':str(filtering_y),'STATE':str(filtering_s),'CAUSE_NAME':str(filtering_c)}
 
-    pivot_data = pivot(index, columns, values, filtering, aggfunc, csv_list) #returns as html script
+    pivot_data = pivot(index, columns, values, filtering, aggfunc) #returns as html script
     template = 'pivotTable.html'
 
     return render_template(template, table=pivot_data)
@@ -76,5 +69,4 @@ def findings():
 
 if __name__ == '__main__':
     # Fire up the Flask test server
-    csv_list = get_csv()
     app.run(debug=True, use_reloader=True)
