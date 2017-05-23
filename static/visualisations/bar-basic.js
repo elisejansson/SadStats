@@ -9,6 +9,10 @@
 
 Highcharts.chart('container1', {
   chart: {
+    borderColor: 'grey',
+    borderRadius: 20,
+    borderWidth: 1,
+    marginRight: 40,
     type: 'bar'
   },
   title: {
