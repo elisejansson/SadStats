@@ -3,7 +3,19 @@
 <head>
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/pivot.css') }}">
 <script type="text/javascript" src="{{ url_for('static', filename='pivot.js') }}"></script>
-
+<script>
+$(function() {
+       $('tr > td:odd').each(function(index) {
+           var scale = [['vPoor', 10], ['poor', 50], ['avg', 250], ['good', 1250], ['vGood', 6250]];
+           var score = $(this).text();
+           for (var i = 0; i < scale.length; i++) {
+               if (score <= scale[i][1]) {
+                   $(this).addClass(scale[i][0]);
+               }
+           }
+       });
+  });
+</script>  
 </head>
 {% include 'navbar.html' %}
 <body>
