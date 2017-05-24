@@ -5,6 +5,46 @@
 </head>
 
 {% include 'navbar.html' %}
+
+<script type="text/javascript">
+//diable already checked column
+$(document).ready(function () {
+    $('#year1').click(function() {
+      checked3 = $("input[type=checkbox][id=year1]:checked").length;
+      if(checked3) {
+        document.getElementById("year2").disabled = true;
+      }
+    });
+});
+$(document).ready(function () {
+    $('#cause1').click(function() {
+      checked3 = $("input[type=checkbox][id=cause1]:checked").length;
+      if(checked3) {
+        document.getElementById("cause2").disabled = true;
+      }
+    });
+});
+
+//index  and value form alert
+$(document).ready(function () {
+    $('#checkBtn').click(function() {
+      checked2 = $("input[type=checkbox][class=form-check-input2]:checked").length;
+      checked1 = $("input[type=checkbox][class=form-check-input1]:checked").length;
+      if(!checked2) {
+        alert("You must pick at least one INDEX and one VALUE.");
+        return false;
+      }
+      if(!checked1) {
+        alert("You must pick at least one INDEX and one VALUE.");
+        return false;
+      }
+    });
+});
+
+</script>
+
+
+
 <body>
 <div class="container-fluid background">
   <div class="wrapper">
@@ -18,22 +58,30 @@
           <div class="col-sm-4">
             <!-- Start of index group -->
             <div class="form-group index-form">
-              <h4>Pick Index* (at least one)</h4>
-                <input class="custom-control-input" type="checkbox" name="index_y" value="YEAR"> &nbsp; Year
+              <h4>Pick Index*
+                <span>
+                  <a class="tooltip-right" href="#" data-tooltip="Pick at least one, can't be the same as a column."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                </span>
+              </h4>
+                <input id="year1" class="form-check-input1" type="checkbox" name="index_y" value="YEAR"> &nbsp; Year
                 </br></br>
-                <input class="form-check-input" type="checkbox" name="index_c" value="CAUSE_NAME" > &nbsp; Cause of death
+                <input id="cause1" class="form-check-input1" type="checkbox" name="index_c" value="CAUSE_NAME"> &nbsp; Cause of death
                 </br></br>
-                <input class="form-check-input" type="checkbox" name="index_s" value="STATE" > &nbsp; State
+                <input class="form-check-input1" type="checkbox" name="index_s" value="STATE" > &nbsp; State
             </div>
             <!-- End of index group -->
           </div>
           <div class="col-sm-4">
             <!-- Start of Values group -->
             <div class="form-group values-form">
-              <h4>Pick value* (at least one)</h4>
-                <input class="form-check-input" type="checkbox" name="value_d" value="DEATHS"> &nbsp; Deaths
+              <h4>Pick value*
+                <span>
+                  <a class="tooltip-right" href="#" data-tooltip="Pick at least one."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                </span>
+              </h4>
+                <input class="form-check-input2" type="checkbox" name="value_d" value="DEATHS"> &nbsp; Deaths
                 </br></br>
-                <input class="form-check-input" type="checkbox" name="value_a" value="AADR"> &nbsp; AADR
+                <input class="form-check-input2" type="checkbox" name="value_a" value="AADR"> &nbsp; AADR
                 </br>
                 <h5>Value type</h5>
                     <select class="form-control" name="aggfunc">
@@ -46,11 +94,15 @@
           <div class="col-sm-4">
             <!-- Start of columns group -->
             <div class="form-group columns-form">
-              <h4>Pick column (cannot be same as index)</h4>
+              <h4>Pick column
+                <span>
+                  <a class="tooltip-right" href="#" data-tooltip="Optional, can't be the same as Index."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                </span>
+              </h4>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="column_y" value="YEAR"> &nbsp; Year
+                <input id="year2" class="form-check-input" type="checkbox" name="column_y" value="YEAR"> &nbsp; Year
                 </br></br>
-                <input class="form-check-input" type="checkbox" name="column_c" value="CAUSE_NAME"> &nbsp; Cause of death
+                <input id="cause2" class="form-check-input" type="checkbox" name="column_c" value="CAUSE_NAME"> &nbsp; Cause of death
               </div>
             </div>
             <!-- End of columns group -->
@@ -59,7 +111,11 @@
         <div class="row">
               <!-- Start of filter-->
               <div class="form-group filter-form">
-                <h4> Add Filter: </h4>
+                <h4> Add Filter
+                  <span>
+                    <a class="tooltip-right" href="#" data-tooltip="Optional, pick up to 3."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+                  </span>
+                </h4>
                 <div class="col-sm-4">
                   <select class="form-control filter-year" name="filter_y">
                     <option value="" selected disabled>Year</option>
@@ -79,7 +135,7 @@
                 <div class="col-sm-4">
                   <select class="form-control filter-cause" name="filter_c">
                     <option value="" selected disabled>Cause of Death</option>
-                    <option value="">Alzheimer's disease</option>
+                    <option value="">Alzheimers disease</option>
                   </select>
                 </div>
                 <div class="col-sm-4">
@@ -94,8 +150,8 @@
         </div>
         <div class="row button-row">
           <!-- Submit Button -->
-          <button class="btn btn-danger btn-lg reset-button" type="reset" value="Reset">Reset</button>
-          <input class="btn btn-primary btn-lg create-button" type="submit" value="Create Pivot Table">
+          <button id="reset" class="btn btn-danger btn-lg reset-button" type="reset" value="Reset">Reset</button>
+          <input class="btn btn-primary btn-lg create-button" type="submit" value="Create Pivot Table" id="checkBtn">
         </div>
     </form>
   </div>
