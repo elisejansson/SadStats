@@ -16,3 +16,13 @@
   margin-left: 130px;
   position: fixed;
 }
+
+th {
+   border: 1px black solid !important;
+   text-align: center !important;
+   padding: 5px !important;
+}
+
+.index_name {
+
+}

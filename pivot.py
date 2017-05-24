@@ -99,13 +99,13 @@ def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc):
     pivot_table = pd.pivot_table(df, index=pt_index, columns=pt_columns,
     values=pt_values, aggfunc=pt_aggfunc)
 
+    pivot_table.rename_axis({'DEATHS': 'Number of Deaths', 'AADR':'Age Adjusted Death Rate'}, axis="columns", inplace=True)
+    pivot_table.rename(index={'YEAR': 'Years', 'CAUSE_NAME': 'Cause of Death', 'STATE': 'State'}, inplace=True)
+
     cm = sns.light_palette( '#F26037', as_cmap=True)
 
-    pivot_table_f = pivot_table.round(2).style.background_gradient(cmap=cm).set_table_styles([{'element': 'th','props': [('border', '1px solid black'), ('text-align', 'center')]}]).set_properties(**{'border': '1px solid black', 'padding': '5px', 'text-align': 'center'})
+    pivot_table_f = pivot_table.round(2).style.background_gradient(cmap=cm).set_properties(**{'border': '1px solid black', 'padding': '5px', 'text-align': 'center'})
     pivot_table_final = pivot_table_f.render()
-
-    #pivot_table.rename_axis({'YEAR': 'Year', 'CAUSE_NAME':
-    #'Cause', 'AADR': 'Age Adjusted Death Rate'}, inplace=True)
 
     return pivot_table_final
 
