@@ -22,3 +22,8 @@ th {
    text-align: center !important;
    padding: 5px !important;
 }
+
+caption {
+  font-size: 150% !important;
+  font-weight: bold !important;
+}
