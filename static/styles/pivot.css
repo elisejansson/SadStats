@@ -23,6 +23,7 @@ th {
    padding: 5px !important;
 }
 
-.index_name {
-
+caption {
+  font-size: 150% !important;
+  font-weight: bold !important;
 }
