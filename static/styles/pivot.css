@@ -3,3 +3,16 @@
   padding: 20px;
 
 }
+
+.anchors {
+  margin-left: 40%;
+}
+
+.anchor1 {
+  margin-left: 20px;
+  position: fixed;
+}
+.anchor2 {
+  margin-left: 130px;
+  position: fixed;
+}
