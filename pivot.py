@@ -52,7 +52,6 @@ def clean_dict(pt_filtering):
 
 
 def clean_aggfunc(pt_aggfunc):
-    #np.set_printoptions(precision=2)
     if pt_aggfunc == 'np.mean':
         return np.mean
     else:
@@ -100,21 +99,14 @@ def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc):
     pivot_table = pd.pivot_table(df, index=pt_index, columns=pt_columns,
     values=pt_values, aggfunc=pt_aggfunc)
 
-    #cm = sns.light_palette("blue", as_cmap=True)
+    cm = sns.light_palette( '#F26037', as_cmap=True)
 
-    #pivot_table_f = pivot_table.round(2).style.background_gradient(cmap=cm)
-    #pivot_table_final = pivot_table_f.render()
+    pivot_table_f = pivot_table.round(2).style.background_gradient(cmap=cm).set_table_styles([{'element element element': 'thead tr th','props': [('border', '1px solid black'), ('text-align', 'center')]}]).set_properties(**{'border': '1px solid black', 'padding': '5px', 'text-align': 'center'})
+    pivot_table_final = pivot_table_f.render()
 
     #pivot_table.rename_axis({'YEAR': 'Year', 'CAUSE_NAME':
     #'Cause', 'AADR': 'Age Adjusted Death Rate'}, inplace=True)
 
-    html_pivottable = pd.DataFrame.to_html(pivot_table, buf=None, columns=None,
-    col_space=None, header=True, index=True, na_rep='NaN', formatters=None,
-    float_format=lambda x: '%10.2f' % x, sparsify=None, index_names=True, justify=None,
-    bold_rows=True, classes="pivottable", escape=True, max_rows=None, max_cols=None,
-    show_dimensions=False, notebook=False, decimal='.', border=None)
-
-    return html_pivottable
-    #return pivot_table_final
+    return pivot_table_final
 
 #pivot(["STATE"],["CAUSE_NAME"],["AADR"], {"YEAR":'None', "STATE":'None', "CAUSE_NAME": 'None'}, np.mean)
