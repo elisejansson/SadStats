@@ -8,11 +8,13 @@
 
 // http://jsfiddle.net/vps8kp8s/
 
-Highcharts.setOptions({
- colors: ['	#D1382F', '#F37736','#FFEC50', '#7BC043','#0392CF','#D3D3D3']
-});
+
 Highcharts.chart('container2', {
     chart: {
+        borderColor: 'grey',
+        borderRadius: 20,
+        borderWidth: 1,
+        marginTop: 1,
         type: 'pie',
         options3d: {
             enabled: true,
@@ -40,6 +42,9 @@ Highcharts.chart('container2', {
     series: [{
         type: 'pie',
         name: 'percentage of all deaths',
+
+        colors: ['#D1382F', '#F37736','#FFEC50', '#7BC043','#0392CF','#D3D3D3'],
+
         data: [
         		{
             		name: 'Diseases of Heart',

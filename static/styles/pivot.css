@@ -4,26 +4,22 @@
 
 }
 
-
-
-.vGood {
-    background-color: #9f0;
+.anchors {
+  margin-left: 40%;
 }
 
-.good {
-    background-color: #cf0;
+.anchor1 {
+  margin-left: 20px;
+  position: fixed;
 }
-
-.avg {
-    background-color: #fd0;
+.anchor2 {
+  margin-left: 130px;
+  position: fixed;
 }
-
-.poor {
-    background-color: #fa0;
-}
-
-.vPoor {
-    background-color: #f30;
+td {
+  background-color: #eee;
+  font-weight: bold;
+  text-align: center;
 }
 =======
 
