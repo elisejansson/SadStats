@@ -28,10 +28,10 @@ def pivottable_api():
 
     aggfunc = str(request.args.get('aggfunc'))
 
-    filtering_y = request.args.get('filtering_y')
-    filtering_s = request.args.get('filtering_s')
-    filtering_c = request.args.get('filtering_c')
-    filtering = {'YEAR':str(filtering_y),'STATE':str(filtering_s),'CAUSE_NAME':str(filtering_c)}
+    filter_y = request.args.get('filter_y')
+    filter_s = request.args.get('filter_s')
+    filter_c = request.args.get('filter_c')
+    filtering = {'YEAR':str(filter_y),'STATE':str(filter_s),'CAUSE_NAME':str(filter_c)}
 
     pivot_data = pivot(index, columns, values, filtering, aggfunc) #returns as html script
     template = 'pivotTable.html'

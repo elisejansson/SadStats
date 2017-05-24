@@ -101,7 +101,7 @@ def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc):
 
     cm = sns.light_palette( '#F26037', as_cmap=True)
 
-    pivot_table_f = pivot_table.round(2).style.background_gradient(cmap=cm).set_table_styles([{'element element element': 'thead tr th','props': [('border', '1px solid black'), ('text-align', 'center')]}]).set_properties(**{'border': '1px solid black', 'padding': '5px', 'text-align': 'center'})
+    pivot_table_f = pivot_table.round(2).style.background_gradient(cmap=cm).set_table_styles([{'element': 'th','props': [('border', '1px solid black'), ('text-align', 'center')]}]).set_properties(**{'border': '1px solid black', 'padding': '5px', 'text-align': 'center'})
     pivot_table_final = pivot_table_f.render()
 
     #pivot_table.rename_axis({'YEAR': 'Year', 'CAUSE_NAME':
