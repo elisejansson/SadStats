@@ -3,10 +3,16 @@
 }
 
 .title {
-    font-size: 40px;
+    font-size: 70px;
     font-family: 'Assistant', cursive;
     font-weight: bold;
     text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+#sub-heading {
+    height: 500px;
+    width: 100%;
+    line-height: 300px;
 }
 
 #container0 {
@@ -29,17 +35,36 @@
   height: auto;
 }
 
-
-
 .primary {
   width: 100%;
   height: auto;
     background-color: #FFFFFF;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
-
-
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
 }
+.secondary {
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    font-size: 30px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+}
+
+.sub-heading {
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    font-size: 40px;
+    font-weight: lighter;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
 
 #container3 {
   height: 500px;
