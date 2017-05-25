@@ -4,19 +4,14 @@
 
 }
 
-.anchors {
-  margin-left: 40%;
+
+th {
+   border: 1px black solid !important;
+   text-align: center !important;
+   padding: 5px !important;
 }
 
-.anchor1 {
-  margin-left: 20px;
-  position: fixed;
-}
-.anchor2 {
-  margin-left: 130px;
-  position: fixed;
-}
-
-.navbar {
-  position: fixed;
+caption {
+  font-size: 150% !important;
+  font-weight: bold !important;
 }
