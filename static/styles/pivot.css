@@ -1,20 +1,6 @@
 
 .table-container {
-  padding: 20px;
-
-}
-
-.anchors {
-  margin-left: 40%;
-}
-
-.anchor1 {
-  margin-left: 20px;
-  position: fixed;
-}
-.anchor2 {
-  margin-left: 130px;
-  position: fixed;
+    padding: 20px;
 }
 
 th {
@@ -24,6 +10,8 @@ th {
 }
 
 caption {
-  font-size: 150% !important;
+  font-size: 30px !important;
   font-weight: bold !important;
+  font-family: 'Assistant', cursive !important;
+  color: #333 !important;
 }

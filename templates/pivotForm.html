@@ -15,13 +15,19 @@ $(document).ready(function () {
       if(checked3) {
         document.getElementById("year2").disabled = true;
       }
+      else {
+        document.getElementById("year2").disabled = false;
+      }
     });
 });
 $(document).ready(function () {
     $('#cause1').click(function() {
-      checked3 = $("input[type=checkbox][id=cause1]:checked").length;
-      if(checked3) {
+      checked4 = $("input[type=checkbox][id=cause1]:checked").length;
+      if(checked4) {
         document.getElementById("cause2").disabled = true;
+      }
+      else {
+        document.getElementById("cause2").disabled = false;
       }
     });
 });
@@ -59,7 +65,7 @@ $(document).ready(function () {
           <div class="col-sm-4">
             <!-- Start of index group -->
             <div class="form-group index-form">
-              <h4>Pick Index*
+              <h4>Indexes*
                 <span>
                   <a class="tooltip-right" href="#" data-tooltip="Pick at least one, can't be the same as a column."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
                 </span>
@@ -75,7 +81,7 @@ $(document).ready(function () {
           <div class="col-sm-4">
             <!-- Start of Values group -->
             <div class="form-group values-form">
-              <h4>Pick value*
+              <h4>Values*
                 <span>
                   <a class="tooltip-right" href="#" data-tooltip="Pick at least one."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
                 </span>
@@ -84,7 +90,7 @@ $(document).ready(function () {
                 </br></br>
                 <input class="form-check-input2" type="checkbox" name="value_a" value="AADR"> &nbsp; AADR
                 </br>
-                <h5>Value type</h5>
+                <h5>Value types</h5>
                     <select class="form-control" name="aggfunc">
                       <option value="np.mean">Average</option>
                       <option value="np.sum">Total</option>
@@ -95,7 +101,7 @@ $(document).ready(function () {
           <div class="col-sm-4">
             <!-- Start of columns group -->
             <div class="form-group columns-form">
-              <h4>Pick column
+              <h4>Columns
                 <span>
                   <a class="tooltip-right" href="#" data-tooltip="Optional, can't be the same as Index."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
                 </span>
@@ -119,7 +125,7 @@ $(document).ready(function () {
                 </h4>
                 <div class="col-sm-4">
                   <select class="form-control filter-year" name="filter_y">
-                    <option value="None" selected disabled>Year</option>
+                    <option value="None">Year</option>
                     <option value="2003">2003</option>
                     <option value="2004">2004</option>
                     <option value="2005">2005</option>
@@ -135,7 +141,7 @@ $(document).ready(function () {
                 </div>
                 <div class="col-sm-4">
                   <select class="form-control filter-cause" name="filter_c">
-                    <option value="None" selected disabled>Cause of Death</option>
+                    <option value="None">Cause of Death</option>
                     <option value="Alzheimer's disease">Alzheimer's disease</option>
                     <option value="Cancer">Cancer</option>
                     <option value="Chronic liver disease and cirrhosis">Chronic liver disease and cirrhosis</option>
@@ -155,7 +161,7 @@ $(document).ready(function () {
                 </div>
                 <div class="col-sm-4">
                   <select class="form-control filter-state" name="filter_s">
-                    <option value="None" selected disabled>State</option>
+                    <option value="None">State</option>
                     <option value="Alabama">Alabama</option>
                     <option value="Alaska">Alaska</option>
                     <option value="Arizona">Arizona</option>
