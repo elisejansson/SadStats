@@ -16,8 +16,7 @@
   margin-left: 130px;
   position: fixed;
 }
-td {
-  background-color: #eee;
-  font-weight: bold;
-  text-align: center;
+
+.navbar {
+  position: fixed;
 }

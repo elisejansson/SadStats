@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Our Findings</title>
-    {% include 'navbar.html' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/findings.css') }}">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+    {% include 'navbar.html' %}
   <body>
     <div class="wrapper">
       <p class="title">Our Findings</p>
       </br></br>
 
-<!-- map
+    <div class="sub-heading">
+        <p>We found some interesting insights with this data set, scroll down to take a look.</p>
+        <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
+    </div>
+
+
+      <!-- MAP
       <div id="container3"></div>
       <script type="text/javascript" src="../static/visualisations/map-us.js"></script>
-    </br></br>-->
+       -->
+    </br></br>
 
       <!-- VISUALISATION 1: Pie-graph -->
       <div class="row pie-row">
@@ -21,25 +28,40 @@
           <div id="container2"></div>
         </div>
         <div class="col-sm-6 para-col">
-          <div class="primary">Over 25% of all deaths in the US are heart related</div>
+          <div class="primary">Over 25% of all deaths in the US are heart related.</div>
+          <div class="secondary"><br/>This is closely followed by Cancer with 23%.<br/>
+          <br/>More people die from heart diseases, cancer, or stroke than all other causes combined.<br/>
+      </div>
           <script type="text/javascript" src="../static/visualisations/pie.js"></script>
         </div>
       </div>
+
+      </br></br>
+      </br></br>
+      </br></br>
       </br></br>
 
       <!-- VISUALISATION 2: Bar-graph negative -->
       <div class="row negative-row">
         <div class="col-sm-5 para-col">
-          <div class="primary"> title here</div>
+            <div class="primary">Hypertension (high blood pressure) saw the
+                greatest increase in occurence during this period.<br/></div>
+          <div class="secondary"><br/>Hypertension is also an indicator of an
+              unhealthy lifestyle.<br/><br/>Interestingly, an unhealthy lifestyle
+              also makes you more susceptable to strokes, yet they saw the
+          greatest decrease in prevalence over this period.</div>
+
         </div>
         <div class="col-sm-7">
           <div id="container0"></div>
           <script type="text/javascript" src="../static/visualisations/bar-negative.js"></script>
         </div>
       </div>
+
       </br></br>
-
-
+      </br></br>
+      </br></br>
+      </br></br>
 
       <!-- VISUALISATION 3: Bar-graph basic-->
       <div class="row basic-row">
@@ -48,9 +70,15 @@
           <script type="text/javascript" src="../static/visualisations/bar-basic.js"></script>
         </div>
         <div class="col-sm-5 para-col">
-          <div class="primary"> title here</div>
+          <div class="primary">District of Columbia (DC) is the small state that
+           houses US Parliament. It makes up an area of only 177km². But why has it's AADR seen almost a 25%
+       decrease over this period?<br/></div>
+        <div class="secondary"><br/>Or a better still, why was it so high
+            to begin with?<br/><br/>Mississipi also saw one of the lowest
+        percentage decreases over this period, which is not positive news for
+    state with one of the highest average AADRs.</a></div>
         </div>
-      </div>  
+      </div>
       </br></br>
     </div>
   </body>

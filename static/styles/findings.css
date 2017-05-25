@@ -3,10 +3,24 @@
 }
 
 .title {
-    font-size: 40px;
-    font-family: 'Assistant', cursive;
-    font-weight: bold;
+  margin-top: 50px;
+    font-size: 45px;
     text-align: center;
+    font-family: 'Assistant' cursive;
+}
+.sub-heading {
+    height: 50%;
+    width: 100%;
+    margin-bottom: 100px;
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Open Sans Condensed', sans-serif;
+    }
+
+.arrow {
+  margin-top: 20%;
 }
 
 #container0 {
@@ -29,17 +43,25 @@
   height: auto;
 }
 
-
-
 .primary {
   width: 100%;
   height: auto;
     background-color: #FFFFFF;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
-
-
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
 }
+.secondary {
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    font-size: 25px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+}
+
+
 
 #container3 {
   height: 500px;

@@ -1,0 +1,204 @@
+{
+	value: 962.0,
+	code: "AL"
+},
+{
+	value: 766.4,
+	code: "AK"
+},
+{
+	value: 727.4,
+	code: "AZ"
+},
+{
+	value: 911.4,
+	code: "AR"
+},
+{
+	value: 684.1,
+	code: "CA"
+},
+{
+	value: 709.0,
+	code: "CO"
+},
+{
+	value: 682.4,
+	code: "CT"
+},
+{
+	value: 790.2,
+	code: "DE"
+},
+{
+	value: 871.5,
+	code: "DC"
+},
+{
+	value: 719.9,
+	code: "FL"
+},
+{
+	value: 867.1,
+	code: "GA"
+},
+{
+	value: 620.0,
+	code: "HI"
+},
+{
+	value: 750.8,
+	code: "ID"
+},
+{
+	value: 772.9,
+	code: "IL"
+},
+{
+	value: 844.0,
+	code: "IN"
+},
+{
+	value: 735.8,
+	code: "IA"
+},
+{
+	value: 785.0,
+	code: "KS"
+},
+{
+	value: 927.7,
+	code: "KY"
+},
+{
+	value: 942.3,
+	code: "LA"
+},
+{
+	value: 774.2,
+	code: "ME"
+},
+{
+	value: 770.0,
+	code: "MD"
+},
+{
+	value: 707.8,
+	code: "MA"
+},
+{
+	value: 807.2,
+	code: "MI"
+},
+{
+	value: 673.2,
+	code: "MN"
+},
+{
+	value: 980.3,
+	code: "MS"
+},
+{
+	value: 842.6,
+	code: "MO"
+},
+{
+	value: 776.5,
+	code: "MT"
+},
+{
+	value: 739.6,
+	code: "NE"
+},
+{
+	value: 832.7,
+	code: "NV"
+},
+{
+	value: 723.1,
+	code: "NH"
+},
+{
+	value: 724.6,
+	code: "NJ"
+},
+{
+	value: 773.0,
+	code: "NM"
+},
+{
+	value: 697.3,
+	code: "NY"
+},
+{
+	value: 831.5,
+	code: "NC"
+},
+{
+	value: 712.5,
+	code: "ND"
+},
+{
+	value: 840.7,
+	code: "OH"
+},
+{
+	value: 935.5,
+	code: "OK"
+},
+{
+	value: 752.1,
+	code: "OR"
+},
+{
+	value: 798.6,
+	code: "PA"
+},
+{
+	value: 738.3,
+	code: "RI"
+},
+{
+	value: 875.0,
+	code: "SC"
+},
+{
+	value: 731.9,
+	code: "SD"
+},
+{
+	value: 914.6,
+	code: "TN"
+},
+{
+	value: 795.3,
+	code: "TX"
+},
+{
+	value: 725.3,
+	code: "UT"
+},
+{
+	value: 726.2,
+	code: "VT"
+},
+{
+	value: 776.9,
+	code: "VA"
+},
+{
+	value: 722.5,
+	code: "WA"
+},
+{
+	value: 955.0,
+	code: "WV"
+},
+{
+	value: 735.2,
+	code: "WI"
+},
+{
+	value: 787.1,
+	code: "WY"
+},

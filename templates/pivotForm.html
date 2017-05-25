@@ -59,7 +59,7 @@ $(document).ready(function () {
           <div class="col-sm-4">
             <!-- Start of index group -->
             <div class="form-group index-form">
-              <h4>Pick Index*
+              <h4>Indexes*
                 <span>
                   <a class="tooltip-right" href="#" data-tooltip="Pick at least one, can't be the same as a column."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
                 </span>
@@ -75,7 +75,7 @@ $(document).ready(function () {
           <div class="col-sm-4">
             <!-- Start of Values group -->
             <div class="form-group values-form">
-              <h4>Pick value*
+              <h4>Values*
                 <span>
                   <a class="tooltip-right" href="#" data-tooltip="Pick at least one."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
                 </span>
@@ -84,7 +84,7 @@ $(document).ready(function () {
                 </br></br>
                 <input class="form-check-input2" type="checkbox" name="value_a" value="AADR"> &nbsp; AADR
                 </br>
-                <h5>Value type</h5>
+                <h5>Value types</h5>
                     <select class="form-control" name="aggfunc">
                       <option value="np.mean">Average</option>
                       <option value="np.sum">Total</option>
@@ -95,7 +95,7 @@ $(document).ready(function () {
           <div class="col-sm-4">
             <!-- Start of columns group -->
             <div class="form-group columns-form">
-              <h4>Pick column
+              <h4>Columns
                 <span>
                   <a class="tooltip-right" href="#" data-tooltip="Optional, can't be the same as Index."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
                 </span>
@@ -112,37 +112,51 @@ $(document).ready(function () {
         <div class="row">
               <!-- Start of filter-->
               <div class="form-group filter-form">
-                <h4> Add Filter
+                <h4> Filters
                   <span>
                     <a class="tooltip-right" href="#" data-tooltip="Optional, pick up to 3."> <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
                   </span>
                 </h4>
                 <div class="col-sm-4">
                   <select class="form-control filter-year" name="filter_y">
-                    <option value="" selected disabled>Year</option>
-                    <option value="">2003</option>
-                    <option value="">2004</option>
-                    <option value="">2005</option>
-                    <option value="">2006</option>
-                    <option value="">2007</option>
-                    <option value="">2008</option>
-                    <option value="">2009</option>
-                    <option value="">2010</option>
-                    <option value="">2011</option>
-                    <option value="">2012</option>
-                    <option value="">2013</option>
+                    <option value="None" selected disabled>Year</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
                   </select>
                 </div>
                 <div class="col-sm-4">
                   <select class="form-control filter-cause" name="filter_c">
-                    <option value="" selected disabled>Cause of Death</option>
-                    <option value="">Alzheimers disease</option>
+                    <option value="None" selected disabled>Cause of Death</option>
+                    <option value="Alzheimer's disease">Alzheimer's disease</option>
+                    <option value="Cancer">Cancer</option>
+                    <option value="Chronic liver disease and cirrhosis">Chronic liver disease and cirrhosis</option>
+                    <option value="Chronic lower respiratory disease">Chronic lower respiratory disease</option>
+                    <option value="Diabetes">Diabetes</option>
+                    <option value="Diseases of Heart">Diseases of Heart</option>
+                    <option value="Essential hypertension and hypertensive renal disease">Essential hypertension and hypertensive renal disease</option>
+                    <option value="Homicide">Homicide</option>
+                    <option value="Influenza and pneumonia">Influenza and pneumonia</option>
+                    <option value="Kidney Disease">Kidney Disease</option>
+                    <option value="Parkinson's disease">Parkinson's disease</option>
+                    <option value="Pneumonitis due to solids and liquids">Pneumonitis due to solids and liquids</option>
+                    <option value="Septicemia">Septicemia</option>
+                    <option value="Stroke">Stroke</option>
+                    <option value="Suicide">Suicide</option>
                   </select>
                 </div>
                 <div class="col-sm-4">
                   <select class="form-control filter-state" name="filter_s">
-                    <option value="" selected disabled>State</option>
-                    <option value="">Alabama</option>
+                    <option value="None" selected disabled>State</option>
+                    <option value="Alabama">Alabama</option>
                   </select>
                 </div>
               </div>
