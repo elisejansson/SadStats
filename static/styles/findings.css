@@ -61,11 +61,3 @@
     font-family: 'Open Sans Condensed', sans-serif;
     text-align: center;
 }
-
-
-#container3 {
-    height: 500px;
-    min-width: 310px;
-    max-width: 600px;
-    margin: 0 auto;
-}
