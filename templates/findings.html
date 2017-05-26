@@ -2,7 +2,6 @@
 <html>
   <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/findings.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
     {% include 'navbar.html' %}
   <body>
@@ -15,10 +14,10 @@
     </div>
 
 
-      <!-- MAP
+
       <div id="container3"></div>
-      <script type="text/javascript" src="../static/visualisations/map-us.js"></script>
-       -->
+      <script src="{{url_for('static', filename='visualisations/map-us.js')}}"></script>
+
     </br></br>
 
       <!-- VISUALISATION 1: Pie-graph -->
