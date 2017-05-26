@@ -11,9 +11,6 @@ Highcharts.chart('container1', {
   title: {
     text: 'Pecrentage Decrease in AADR from 2003-2013'
   },
-  subtitle: {
-    text: 'Source: <a href="https://www.google.com.au/">Google</a>'
-  },
   xAxis: {
     categories: ["District of Columbia", "California", "Maryland", "Colorado",
     "Nevada", "New Jersey", "Virginia", "Massachusetts", "New York", "Georgia",
