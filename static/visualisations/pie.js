@@ -1,14 +1,3 @@
-/*
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-3d.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-
-<div id="container" style="height: 400px"></div>
-*/
-
-// http://jsfiddle.net/vps8kp8s/
-
-
 Highcharts.chart('container2', {
     chart: {
         borderColor: 'grey',

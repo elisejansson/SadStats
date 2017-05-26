@@ -42,6 +42,7 @@
 #container2 {
     width: 100%;
     height: auto;
+    margin: 0 auto;
 }
 
 .primary {
@@ -62,10 +63,8 @@
     text-align: center;
 }
 
-
-#container3 {
-    height: 500px;
-    min-width: 310px;
-    max-width: 600px;
+.maps-row {
+    width: 100%;
+    height: auto;
     margin: 0 auto;
 }

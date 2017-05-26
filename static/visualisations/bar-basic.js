@@ -1,5 +1,3 @@
-// http://jsfiddle.net/qdjhffcw/
-
 Highcharts.chart('container1', {
   chart: {
     borderColor: 'grey',
