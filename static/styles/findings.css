@@ -24,6 +24,8 @@
     margin-top: 20%;
 }
 
+
+
 #container0 {
     min-width: 310px;
     max-width: 800px;
@@ -62,11 +64,3 @@
     font-family: 'Open Sans Condensed', sans-serif;
     text-align: center;
 }
-
-
-.maps-row {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
-
