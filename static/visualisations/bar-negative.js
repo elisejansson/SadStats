@@ -1,10 +1,3 @@
-/*
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-*/
-
-// http://jsfiddle.net/vdwprmsL/
-
 Highcharts.chart('container0', {
   chart: {
     borderColor: 'grey',

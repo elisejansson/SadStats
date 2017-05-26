@@ -24,6 +24,8 @@
     margin-top: 20%;
 }
 
+
+
 #container0 {
     min-width: 310px;
     max-width: 800px;
@@ -42,6 +44,7 @@
 #container2 {
     width: 100%;
     height: auto;
+    margin: 0 auto;
 }
 
 .primary {
