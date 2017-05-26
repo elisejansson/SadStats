@@ -1,18 +1,17 @@
 
 .table-container {
-  padding: 20px;
-
+    padding: 20px;
 }
 
-.anchors {
-  margin-left: 40%;
+th {
+   border: 1px black solid !important;
+   text-align: center !important;
+   padding: 5px !important;
 }
 
-.anchor1 {
-  margin-left: 20px;
-  position: fixed;
-}
-.anchor2 {
-  margin-left: 130px;
-  position: fixed;
+caption {
+  font-size: 30px !important;
+  font-weight: bold !important;
+  font-family: 'Assistant', cursive !important;
+  color: #333 !important;
 }
