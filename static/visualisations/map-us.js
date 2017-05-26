@@ -1,5 +1,6 @@
 
-$.getJSON("C:/Users/ASUS/Documents/Uni/2017/2017 SEMESTER 1/Foundations of Informatics/Project/Phase 3/SadStats/static/visualisations/highcharts-us-data.json", function (data) {
+$.getJSON("highcharts-us-data.json", function (data) {
+  console.log(json);
 
     // Make codes uppercase to match the map data
     $.each(data, function () {
