@@ -81,6 +81,34 @@ def filter_data(data, filtering):
     return filtered_data
 
 
+def get_caption(values_list, filtering_dict, func):
+    year = ' '
+    cause = ' '
+    state = ' '
+    if filtering_dict['YEAR'] != None:
+        year = ' in the year ' + filtering_dict['YEAR']
+    if filtering_dict['STATE'] != None:
+        state = ' in the state of ' + filtering_dict['STATE']
+    if filtering_dict['CAUSE_NAME'] != None:
+        cause = ' for ' + filtering_dict['CAUSE_NAME']
+    if func == np.mean:
+        funct = 'Average '
+    elif func == np.sum:
+        funct = 'Total '
+    if values_list == ['DEATHS']:
+        value = 'deaths'
+    elif values_list == ['AADR']:
+        value = 'AADR'
+    else:
+        value = 'deaths and AADR'
+
+    caption = funct + value + cause + state + year
+    return caption
+
+
+
+
+
 def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc):
 
     raw_data = get_csv()
@@ -99,14 +127,11 @@ def pivot(pt_index, pt_columns, pt_values, pt_filtering, pt_aggfunc):
     pivot_table = pd.pivot_table(df, index=pt_index, columns=pt_columns,
     values=pt_values, aggfunc=pt_aggfunc)
 
-    cm = sns.light_palette( '#F26037', as_cmap=True)
+    cm = sns.light_palette( '#35CBF4', as_cmap=True)
 
-    pivot_table_f = pivot_table.round(2).style.background_gradient(cmap=cm).set_table_styles([{'element': 'th','props': [('border', '1px solid black'), ('text-align', 'center')]}]).set_properties(**{'border': '1px solid black', 'padding': '5px', 'text-align': 'center'})
+    caption = get_caption(pt_values, pt_filtering, pt_aggfunc)
+
+    pivot_table_f = pivot_table.round(2).style.set_caption(str(caption)).background_gradient(cmap=cm).set_properties(**{'border': '1px solid black', 'padding': '5px', 'text-align': 'center'})
     pivot_table_final = pivot_table_f.render()
 
-    #pivot_table.rename_axis({'YEAR': 'Year', 'CAUSE_NAME':
-    #'Cause', 'AADR': 'Age Adjusted Death Rate'}, inplace=True)
-
     return pivot_table_final
-
-#pivot(["STATE"],["CAUSE_NAME"],["AADR"], {"YEAR":'None', "STATE":'None', "CAUSE_NAME": 'None'}, np.mean)

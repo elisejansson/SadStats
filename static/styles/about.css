@@ -11,18 +11,13 @@
   font-size: 40px;
 }
 
-.about-sadstats {
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 40px;
-}
-
-.about-group {
+.about-block {
 	max-width: 100%;
   min-height: 400px;
 	height: auto;
 	padding: 15px 35px 15px;
 	background: rgba(255,255,255,0.9);
-	border: 1px solid rgba(0,0,0,0.1);
+	border: 1px solid rgba(130,130,130,0.2);
 	border-radius: 25px;
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
