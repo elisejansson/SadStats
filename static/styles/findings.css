@@ -42,6 +42,7 @@
 #container2 {
     width: 100%;
     height: auto;
+    margin: 0 auto;
 }
 
 .primary {
@@ -61,3 +62,11 @@
     font-family: 'Open Sans Condensed', sans-serif;
     text-align: center;
 }
+
+
+.maps-row {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+

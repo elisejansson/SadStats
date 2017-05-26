@@ -2,12 +2,22 @@
 <html>
 <head>
 </head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
 {% include 'navbar.html' %}
 <body>
   <h1 class="text-center">
     Welcome to SadStats!
   </h1>
   <h4 class="text-center">
-    Top Ten Causes of Death in the United States Between 2003-2013</h4>
+      Here you'll find information on cause of death in the US.
+  </h4>
+<div class="main-map">
+    <iframe width="781.9407008086255" height="483.5" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1i-grp4OxG4k2Y4o-ZCicXGTXqDsujLGsz1T5w2ydWJM/pubchart?oid=212182553&amp;format=interactive"></iframe>
+</div>
+<h3 class="text-center">
+  Age Adjusted Death Rate (AADR) by US State</h3>
+<h4 class="text-center">
+    Go to our <a href="/about">About Page</a> to learn more on AADR.
+</h4>
 </body>
 </html>
